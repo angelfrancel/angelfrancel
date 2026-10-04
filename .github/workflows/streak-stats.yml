@@ -1,0 +1,45 @@
+name: Update profile boards
+
+# Rebuilds profile/analytics.svg and profile/calendar.svg from your real GitHub activity.
+#  - on every push to this repository's default branch
+#  - every 3 hours, so commits you push to your OTHER repositories show up too
+#  - on demand from the Actions tab (Run workflow)
+on:
+  push:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-boards
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the analytics board
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+        run: python3 scripts/generate_analytics.py --output profile/analytics.svg
+      - name: Create the Stardew calendar
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+        run: python3 scripts/generate_calendar.py --output profile/calendar.svg
+      - name: Publish changed images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/analytics.svg profile/calendar.svg
+          if ! git diff --cached --quiet; then
+            git commit -m "Update profile boards"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi

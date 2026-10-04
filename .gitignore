@@ -1,0 +1,10 @@
+# Local-only helpers: keep them on your computer, not in the public profile repo
+PREVIEW.html
+SETUP.md
+assets/analytics-preview.svg
+assets/calendar-preview.svg
+
+# Python / OS clutter
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 78" role="img" aria-label="The Progress Board">
+  <rect x="1" y="1" width="918" height="76" fill="#49312a" stroke="#ad7750" stroke-width="2"/>
+  <rect x="10" y="10" width="900" height="58" fill="none" stroke="#76503b" stroke-width="2"/>
+  <path d="M30 38h230m400 0h230" stroke="#d99a52" stroke-width="2"/>
+  <rect x="40" y="34" width="8" height="8" fill="#d99a52"/><rect x="872" y="34" width="8" height="8" fill="#d99a52"/>
+  <text x="460" y="48" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="bold" fill="#f2dfbc">THE PROGRESS BOARD</text>
+</svg>
