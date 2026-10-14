@@ -1,14 +1,13 @@
 <div align="center">
-  <img src="assets/welcome.svg" alt="Angel Francel, Backend Artisan. Current quest: ship ContextGuard." width="100%" />
+  <img src="assets/welcome.svg" alt="Angel Francel, computer science student building TaponSusi." width="100%" />
 </div>
 
 <table>
   <tr>
     <td width="72%" valign="middle">
       <h2>Hi, I'm Angel</h2>
-      <p>I'm a computer science student interested in full stack development. I build Java and Spring Boot applications, and I enjoy figuring out how APIs, data, and user needs fit together.</p>
-      <p><strong>Currently building:</strong> TaponSusi, an inventory and reservation system, and ContextGuard, an MCP privacy and policy gateway.</p>
-      <p><em>Learning, building, and keeping an iced coffee nearby.</em></p>
+      <p>I'm a computer science student interested in full stack development. I enjoy figuring out how APIs, data, and real user workflows fit together.</p>
+      <p><strong>Currently building:</strong> <a href="https://github.com/angelfrancel/taponsusi">TaponSusi</a>, a toolkit for livestream sellers that tracks buyer claims and limited stock, turns purchase requests into orders or waitlists, with a seller dashboard in progress.</p>
     </td>
     <td width="28%" align="center" valign="middle">
       <img src="assets/angel-pixel.png" alt="Pixel art of Angel coding with an iced coffee" width="190" />
@@ -60,4 +59,4 @@
 
 ### Say Hello
 
-You can reach me through [GitHub](https://github.com/angelfrancel). <!-- Add LinkedIn, portfolio, or email here if you want them public. -->
+You can reach me through [GitHub](https://github.com/angelfrancel) or [LinkedIn](https://www.linkedin.com/in/angel-francel-hermogenes-45267a424/).

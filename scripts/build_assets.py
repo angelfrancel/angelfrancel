@@ -22,8 +22,8 @@ ASSETS = ROOT / "assets"
 NAME = "ANGEL FRANCEL"
 CLASS_TITLE = "CS STUDENT"
 CLASS_SUB = "LEARNING FULL STACK DEVELOPMENT"
-QUEST_TITLE = "BUILDING TAPONSUSI & CONTEXTGUARD"
-QUEST_SUB = "JAVA, SPRING BOOT"
+QUEST_TITLE = "BUILDING TAPONSUSI"
+QUEST_SUB = "CLAIMS, STOCK, ORDERS"
 
 PORTRAIT_IMAGE = ASSETS / "portrait.png"
 PORTRAIT_KEEP_SCENE = True
@@ -108,6 +108,15 @@ def slot_with(icon_name, x, y):
 def welcome():
     W, H = 920, 280
     b = [pk.frame(W, H)]
+    b.append('''<style>
+      .heart-reaction { animation: heart-pop 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; opacity: 0; }
+      @keyframes heart-pop {
+        0%, 68%, 100% { opacity: 0; transform: translateY(5px) scale(.75); }
+        74%, 84% { opacity: 1; transform: translateY(0) scale(1); }
+        95% { opacity: 0; transform: translateY(-12px) scale(1); }
+      }
+      @media (prefers-reduced-motion: reduce) { .heart-reaction { animation: none; opacity: 1; } }
+    </style>''')
     ys = [38, 114, 190]
     for icon, y in zip(("ring", "bracelet", "sneakers"), ys):
         b.append(slot_with(icon, 34, y))
@@ -138,7 +147,15 @@ def welcome():
                   f'{pk.grid(sprite, character.PALETTE, sx, sy, s)}')
     b.append(clip)
     b.append(f'<g clip-path="url(#pf)">{scene}{figure}</g>')
-    # text block
+    heart = [
+        ".rr..rr.",
+        "rrrrrrrr",
+        "rppppppr",
+        ".rppppr.",
+        "..rppr..",
+        "...rr...",
+    ]
+    b.append(f'<g class="heart-reaction">{pk.grid(heart, {"r": "#a7374a", "p": "#f47b91"}, 213, 42, 4)}</g>')
     # text block
     tx = 346
 

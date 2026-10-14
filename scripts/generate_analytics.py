@@ -59,6 +59,14 @@ def ring(cx, cy, r):
 
 def render(total, current, longest):
     b = [pk.frame(W, H)]
+    b.append('''<style>
+      .streak-flame { animation: flame-flicker 1.6s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center bottom; }
+      @keyframes flame-flicker {
+        from { transform: translateY(1px) scale(.96, .98); }
+        to { transform: translateY(-2px) scale(1.04, 1.06); }
+      }
+      @media (prefers-reduced-motion: reduce) { .streak-flame { animation: none; } }
+    </style>''')
     # banner
     b.append(f'<rect x="300" y="26" width="320" height="56" fill="{pk.WOOD}" stroke="{pk.GOLD}" stroke-width="3"/>')
     b.append(pk.grid(sp.BARS, sp.BARS_PAL, 333, 44, 3))
@@ -75,7 +83,8 @@ def render(total, current, longest):
         (sp.CROWN, sp.CROWN_PAL, longest, ["LONGEST", "STREAK"]),
     ]
     for cx, (icon, pal, value, label) in zip(COLS, cols):
-        b.append(pk.grid(icon, pal, cx - 32, 118, 4))
+        sprite = pk.grid(icon, pal, cx - 32, 118, 4)
+        b.append(f'<g class="streak-flame">{sprite}</g>' if icon is sp.FLAME else sprite)
         s = 4 if len(fmt(value)) * 32 <= 240 else 3
         b.append(pk.text(fmt(value), cx, 194, s, pk.CREAM, "middle"))
         b.append(pk.text(label[0], cx, 238, 2, pk.TAN, "middle"))
