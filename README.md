@@ -8,6 +8,7 @@
       <h2>Hi, I'm Angel</h2>
       <p>I'm a computer science student interested in full stack development. I enjoy figuring out how APIs, data, and real user workflows fit together.</p>
       <p><strong>Currently building:</strong> <a href="https://github.com/angelfrancel/taponsusi">TaponSusi</a>, a toolkit for livestream sellers that tracks buyer claims and limited stock, turns purchase requests into orders or waitlists, with a seller dashboard in progress.</p>
+      <p><strong>Finished projects:</strong> <a href="https://github.com/angelfrancel/contextguard">ContextGuard</a>, an MCP privacy and policy gateway; and <a href="https://github.com/angelfrancel/contractrescue">ContractRescue</a>, an IBM Bob-powered workflow for detecting and resolving conflicting API contracts.</p>
     </td>
     <td width="28%" align="center" valign="middle">
       <img src="assets/angel-pixel.png" alt="Pixel art of Angel coding with an iced coffee" width="190" />

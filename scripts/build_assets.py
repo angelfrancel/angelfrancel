@@ -23,7 +23,7 @@ NAME = "ANGEL FRANCEL"
 CLASS_TITLE = "CS STUDENT"
 CLASS_SUB = "LEARNING FULL STACK DEVELOPMENT"
 QUEST_TITLE = "BUILDING TAPONSUSI"
-QUEST_SUB = "CLAIMS, STOCK, ORDERS"
+QUEST_SUB = ""
 
 PORTRAIT_IMAGE = ASSETS / "portrait.png"
 PORTRAIT_KEEP_SCENE = True
@@ -170,7 +170,7 @@ def welcome():
     b.append(pk.text(CLASS_SUB, tx, 160, 2, pk.TAN))
 
     b.append(pk.text("CURRENT QUEST", tx, 198, 2, pk.GOLD))
-    b.append(pk.text(QUEST_TITLE, tx, 218, 2, pk.CREAM))
+    b.append(pk.text(QUEST_TITLE, tx, 226 if not QUEST_SUB else 218, 2, pk.CREAM))
 
     if QUEST_SUB:
         b.append(pk.text(QUEST_SUB, tx, 246, 2, pk.TAN))
@@ -182,8 +182,6 @@ def skills():
     b = [pk.frame(W, H)]
     b.append(pk.grid(sp.BOOK, sp.BOOK_PAL, 40, 28, 3))
     b.append(pk.text("SKILLS", 104, 38, 4, pk.CREAM))
-    b.append(pk.text("TOOLS FOR THE NEXT QUEST.", 852, 46, 2, pk.TAN, "end"))
-    b.append(pk.text(">", 886, 41, 3, pk.GOLD, "end"))
     pw, pitch = 276, 62
     for col, (title, names) in enumerate(SKILL_PANELS):
         px = 34 + col * (pw + 12)
